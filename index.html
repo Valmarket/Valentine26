@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jamila, Will You Be My Valentine? 💖</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  text-align: center;
+}
+.box {
+  position: relative;
+  max-width: 350px;
+  z-index: 10;
+}
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+button {
+  padding: 12px 24px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  background: #ff2f92;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+.no-btn {
+  position: absolute;
+  pointer-events: none; /* Makes the button unclickable */
+}
+</style>
+</head>
+<body>
+
+<div class="box">
+  <h1>Jamila, Will You Be My Valentine?</h1>
+  <p>The No button seems a bit shy...</p>
+  <button id="yesButton" onclick="window.location='celebration.html'">Yes 💘</button>
+  <button id="noButton" class="no-btn">No 😅</button>
+</div>
+
+<script>
+const noButton = document.getElementById('noButton');
+
+// Moves the No button randomly for fun, but cannot click due to pointer-events: none
+function moveNoButton() {
+  const x = Math.random() * (window.innerWidth - 100);
+  const y = Math.random() * (window.innerHeight - 50);
+  noButton.style.left = x + 'px';
+  noButton.style.top = y + 'px';
+}
+
+// Move No button continuously for mobile hover/touch illusion
+setInterval(moveNoButton, 300);
+</script>
+
+</body>
+</html>
